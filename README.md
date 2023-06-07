@@ -1,3 +1,3 @@
 # Simple Game Packet Protocol
 
-Reserved
+A serialization deserialization library for a custom network game packet.
