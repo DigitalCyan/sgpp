@@ -16,7 +16,7 @@ mod tests {
 
         let buf: Vec<u8> = packet.into();
 
-        assert_eq!(buf, vec![0, 0, 0, 10, 0, 0, 0, 0, 65, 0]);
+        assert_eq!(buf, vec![0, 0, 0, 10, 0, 0, 0, 0, 65, 10]);
     }
 
     #[test]
