@@ -1,6 +1,6 @@
 [package]
 name = "sgpp"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2021"
 description = "A simple model for implementing network packets for games or whatever else."
 license = "MIT"
