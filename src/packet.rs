@@ -26,7 +26,7 @@ impl Into<Vec<u8>> for Packet {
         buf.append(&mut self.size.to_be_bytes().iter().map(|b| *b).collect::<Vec<u8>>());
         buf.append(&mut self.kind.to_be_bytes().iter().map(|b| *b).collect::<Vec<u8>>());
         buf.append(&mut self.body.clone());
-        buf.push('\0' as u8);
+        buf.push('\n' as u8);
 
         buf
     }
