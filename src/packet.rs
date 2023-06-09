@@ -5,15 +5,15 @@ pub const PACKET_MIN_SIZE: u32 = 9;
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Packet {
     size: u32,
-    kind: u32,
+    event: u32,
     body: Vec<u8>,
 }
 
 impl Packet {
-    pub fn new(kind: u32, body: &Vec<u8>) -> Self {
+    pub fn new(event: u32, body: &Vec<u8>) -> Self {
         Self {
             size: PACKET_MIN_SIZE + body.len() as u32,
-            kind,
+            event,
             body: body.clone(),
         }
     }
@@ -24,7 +24,7 @@ impl Into<Vec<u8>> for Packet {
         let mut buf = Vec::new();
 
         buf.append(&mut self.size.to_be_bytes().iter().map(|b| *b).collect::<Vec<u8>>());
-        buf.append(&mut self.kind.to_be_bytes().iter().map(|b| *b).collect::<Vec<u8>>());
+        buf.append(&mut self.event.to_be_bytes().iter().map(|b| *b).collect::<Vec<u8>>());
         buf.append(&mut self.body.clone());
         buf.push('\n' as u8);
 
